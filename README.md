@@ -23,5 +23,21 @@
                 摘抄理解于这个博客地址
                         https://www.jianshu.com/p/f5a29dde775b
 
+                我的理解是 在父组件声明一个 ref, 将这个ref 传递到子组件。        
+
+
+     6. memo的使用   
+            具体参考MemoCom  
+
+
+          
+
+
+
+
+
+
+
+
 
 
