@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { useReducer, useRef } from "react"
 import './App.css';
+import context from "./Store/Context/index";
+import reducer from "./Store/Reducer/index.js";
+import List from "./List/index";
+import Product from "./Product/index";
+import Index from "./Index/index";
+import {ADD} from './Store/Action/index'
+import Child from "./Child";
 
 function App() {
+  const initState = {
+    arrList: [],
+    count: 0,
+  }
+  const [state, dispatch] = useReducer(reducer, initState)
+  const ChildRef = useRef()
+  const click = ()=>{
+          dispatch({type:ADD})
+  }
+  const handleClick = (ref)=>{
+            ChildRef.current.change()
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <context.Provider value={{ state, dispatch }}>
+          <Index  />
+          <List />
+          <Product />
+
+
+
+
+
+
+          
+          <Child  cRef={ChildRef} />
+          <button onClick={handleClick}>父组件调用子组件方法</button>
+      </context.Provider>
     </div>
   );
 }

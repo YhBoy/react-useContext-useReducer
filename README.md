@@ -13,3 +13,15 @@
             具体查看 Action文件
 
     只是随手练习，亲喷。
+
+
+
+
+
+     父组件调用子组件方法
+            具体查看 Child 组件 
+                照抄自这个博客地址
+                        https://www.jianshu.com/p/f5a29dde775b
+
+
+
